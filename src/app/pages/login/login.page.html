@@ -1,0 +1,36 @@
+
+
+<ion-content>
+  <div style="height: 150px; overflow: hidden;">
+    <ion-label class="title">تسجيل الدخول</ion-label>
+    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+      <path d="M0.00,92.27 C216.83,192.92 304.30,8.39 500.00,109.03 L500.00,0.00 L0.00,0.00 Z" style="stroke: none;fill: #DB4524;"></path>
+    </svg>
+  </div>
+  <ion-spinner name="dots" class="spinner" [hidden] ="loaded"></ion-spinner>
+  <div class="content" [hidden] ="!loaded">
+   <h3 >سجل في حساب الطيار الخاص بك <br> 
+    <span class="hint"> سجل دخولك الان حتي تتمكن من متابعة طلباتك عبر منصة طيران </span>
+  </h3>
+  <div id="login_form" style="    min-height: 200px; margin-top: 40px;">
+
+
+  <ion-item class="item" lines="none" no-lines>
+    <ion-input class="input" type="text" placeholder=" User Name" [(ngModel)]="username" ></ion-input>
+  </ion-item>
+  <ion-item class="item" lines="none" no-lines  >
+
+    <ion-input class="input" type="password" placeholder="Password" [(ngModel)]="password"  ></ion-input>
+  </ion-item>
+   
+  <div class="btn" (click)="loginMarket()">تسجيل الدخول </div>
+
+   
+  </div>
+
+
+  </div>
+  <div id="sign-in-button">
+
+  </div>
+</ion-content>

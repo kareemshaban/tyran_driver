@@ -1,0 +1,118 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="title" >تفاصيل الطلب </ion-title>
+    <ion-icon name="close-circle-outline" class="headericon" (click)="close()"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-spinner name="dots" class="spinner" [hidden] ="loaded"></ion-spinner>
+
+  <div [hidden] ="!loaded">
+
+
+  <ion-list  >
+ 
+    <ion-row *ngFor="let product of list ; let i = index" class="element"> 
+
+   
+     <ion-col size="6"  style="float: right;">
+       <ion-label class="name"> {{product.catName}} <br>{{product.name}} 
+        <span style="margin-right: 10px; font-size: 14px; color: #DB4524; font-weight: bold; direction: rtl;"> X {{product.qnt}} </span>
+        <br>
+        <span style="font-size: 10px; color: gray;">
+       الحجم :   {{product.size}} <br>  <span   style="color: #DB4524; margin-right: 10px;">{{product.add}}</span>
+        
+       
+       </span>
+       <br> <span *ngIf="product.extra !== ''"  style="color: #DB4524;">   اضافات  <span style="color: gray;"> {{product.extra}}</span>  
+       <!-- <span   style="color: #DB4524; margin-right: 10px;">{{additionValue}} ج.م</span> -->
+      </span> 
+       <br>
+       <span style="font-size: 11px; color: #DB4524;"> السعر :  {{product.price * product.qnt}} ج . م
+       </span>
+       
+       <br>
+       <span style="font-size: 11px; color: #DB4524; direction: rtl;">  الملاحظات : {{product.details }} 
+      </span>
+       </ion-label>
+       <br>
+     
+     </ion-col>
+     <ion-col size="6" style="float: left; display: grid; justify-content: center;">
+      <div class="thumb-image" [style.background-image]=" 'url('  + baseUrl + product.img+')'  "></div>
+ 
+     </ion-col>
+   </ion-row>
+ 
+ 
+   </ion-list>
+
+   <ion-card class="total" [hidden]="list.length === 0">
+    <ion-row>
+      <ion-col size="6">
+        <ion-label class="label">الاجمالي</ion-label>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label class="money">{{total}}</ion-label>
+
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-label class="label">التوصيل</ion-label>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label class="money">{{delivery_value}}</ion-label>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="6">
+        <ion-label class="label">الخصم</ion-label>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label class="money"> 0.0</ion-label>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="6">
+        <ion-label class="label">المجموع الكلي</ion-label>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label class="money">{{net}}</ion-label>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-label class="label" style="color: #DB4524;">الملاحظات علي الاوردر <br>
+        <span style="color: #000; font-size: 12px;">  {{order.notes}}</span>  
+        </ion-label>
+      </ion-col>
+      </ion-row>
+
+    
+  </ion-card>
+</div>
+</ion-content>
+<ion-footer *ngIf="order.state !== 3">
+  <ion-toolbar [hidden] ="!loaded">
+    <ion-row>
+      <ion-col size="12" style="justify-content: center; display: flex;">
+        <ion-button *ngIf="order.state === 5 " color="primary" (click)="dismiss(6)"> 
+          استلام
+       </ion-button>
+       <ion-button *ngIf="order.state === 6 " color="danger" (click)="dismiss(3)"> 
+        انهاء
+     </ion-button>
+
+
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

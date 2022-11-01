@@ -1,0 +1,105 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title  class="title">
+      الطلبات الجديدة
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-spinner name="dots" class="spinner" [hidden] ="loaded"></ion-spinner>
+
+  <ion-list *ngIf="orderList.length > 0" class="list" style="margin-bottom: 30px;">
+    <ion-card class="item" *ngFor="let item of orderList" lines="none">
+     
+      <ion-row style="width: 100%; display: flex; justify-content: center;">
+        <ion-col size="6" style="justify-content: center; display: flex;">
+          <ion-label class="order_no">{{item.market_name}}</ion-label>
+          </ion-col>
+        </ion-row>
+     <ion-row style="width: 100%; display: flex; justify-content: center;">
+       <ion-col size="6" style="justify-content: center; display: flex;">
+        <ion-label class="order_no">{{item.order_number}}</ion-label>
+
+
+       </ion-col>
+       <ion-col size="6" style="justify-content: center; display: flex;" *ngIf="item.state_num === 1 || item.state_num === 0 " >
+        <ion-label class="order_no" style="direction: ltr;">
+          {{item.time}}  
+        </ion-label>
+       </ion-col>
+       
+     </ion-row>
+     
+
+      <ion-row style="background: red; padding: 10px;" *ngIf="item.state_num === 0" >
+       <ion-col size="6">
+        <ion-label class="label" style="color: #fff;"> حالة الطلب</ion-label>
+       </ion-col>
+       <ion-col size="6">
+         <ion-label class="money" style="color: #fff;">   {{item.state}}</ion-label>
+     
+       </ion-col>
+     </ion-row>
+     <ion-row style="background: green; padding: 10px;" *ngIf="item.state_num === 1" >
+      <ion-col size="6">
+       <ion-label class="label" style="color: #fff;"> حالة الطلب</ion-label>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label class="money" style="color: #fff;">   {{item.state}}</ion-label>
+    
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="item.state_num > 1" >
+      <ion-col size="6">
+       <ion-label class="label" > حالة الطلب</ion-label>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label class="money">   {{item.state}}</ion-label>
+    
+      </ion-col>
+    </ion-row>
+
+
+      <ion-row>
+        <ion-col size="6">
+         <ion-label class="label">الاجمالي</ion-label>
+        </ion-col>
+        <ion-col size="6">
+        <ion-label class="money"> {{item.total}}</ion-label> 
+        </ion-col>
+      </ion-row>
+     <ion-row>
+       <ion-col size="6">
+        <ion-label class="label"> الخصم</ion-label>
+       </ion-col>
+       <ion-col size="6">
+         <ion-label class="money"> {{item.discount}} </ion-label>
+       
+       </ion-col>
+     </ion-row>
+
+     <ion-row>
+       <ion-col size="6">
+        <ion-label class="label"> المبلغ المستحق</ion-label>
+       </ion-col>
+       <ion-col size="6">
+       <ion-label class="money"> {{item.net }}</ion-label>
+       </ion-col>
+     </ion-row>
+
+      <ion-row class="actions">
+        <ion-col size="6" style="text-align: center;"   >
+          <ion-button color="primary" (click)="deliver(item.order_number , 6)" [hidden]="item.state_num === 6"> استلام </ion-button>
+          <ion-button color="danger" (click)="deliver(item.order_number , 3)" [hidden]="item.state_num !== 6"> انهاء </ion-button>
+
+        </ion-col>
+        <ion-col size="6" style="text-align: center;"  >
+          <ion-button color="success" (click)="details(item.order_number )"> التفاصيل </ion-button>
+        </ion-col>
+       
+      </ion-row>
+
+    </ion-card>
+   </ion-list>
+</ion-content>

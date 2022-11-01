@@ -1,0 +1,169 @@
+.title{
+    font-size: 11pt;
+    font-weight: bold;
+    color: #000;
+    border-right-style: solid;
+    border-right-color: #DB4524;
+    padding: 5px;
+    margin-bottom: 15px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 5px;
+    text-align: right;
+    position: absolute;
+    right: 20px;
+    top: 5px;
+}
+.headericon {
+    font-size: 25px;
+    color: #DB4524;
+    position: absolute;
+    left: 20px;
+    top: 5px;
+}
+ion-content {
+    --background: #FCFCFC ;
+}
+ion-list-header {
+    direction: rtl;
+    padding: 5px; 
+    width: 95%;
+    display: block;
+    margin: 20px auto;
+    border-radius: 15px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #DB4524;
+}
+.market_img {
+    width: 50px;
+    height: 50px;
+    border-radius: 30%;
+    margin: 10px;
+}
+.market_name {
+    color: #000;
+    font-size: 14px;
+    text-align: right;
+    margin-right: 20px;
+}
+.thumb-image{
+    width: 80px;
+    height: 80px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 15%;
+    float: left;
+  }
+  .name{
+    font-size: 11px;
+    text-align: right;
+    margin-right: 5px;
+  }
+  .element {
+   direction: rtl;
+   min-height: 70px;
+   width: 90%;
+   margin: auto;
+   border-bottom-style: solid;
+   border-bottom-width: 2px;
+   border-bottom-color: lightgray;
+  }
+  .empty {
+      
+  }
+  .empty ion-label ,ion-icon {
+      color: #DB4524;
+  }
+  .total {
+      width: 100%;
+      background: transparent;
+      background-color: transparent;
+      --background: transparent;
+      box-shadow: none;
+      border-top-color: lightgray;
+      border-top-style: solid;
+      border-top-width: 1px;
+      direction: rtl;
+      padding: 20px;
+  }
+  .label {
+      font-size: 15px;
+      font-weight: bold;
+      text-align: right;
+      color: #000;
+      float: right;
+
+  }
+  .money {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+    color: #DB4524;
+    float: left;
+  }
+
+  .spinner{
+    color: #DB4524;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    font-size: 30px;
+    -ms-transform: scale(2) translate(-25%, -25%);
+    transform: scale(2) translate(-25%, -25%);
+    box-shadow: none;
+    --background: transparent;
+  }
+
+  .hint {
+      width: 90%;
+      display: block;
+      margin: 10px auto;
+      font-size: 9px;
+      color: gray;
+      text-align: center;
+  }
+
+  .empty_img {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    font-size: 30px;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    box-shadow: none;
+    --background: transparent;  
+  }
+
+  .total {
+    width: 100%;
+    background: transparent;
+    background-color: transparent;
+    --background: transparent;
+    box-shadow: none;
+    border-top-color: lightgray;
+    border-top-style: solid;
+    border-top-width: 1px;
+    direction: rtl;
+    padding: 20px;
+}
+.label {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: right;
+    color: #000;
+    float: right;
+
+}
+.money {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: left;
+  color: #DB4524;
+  float: left;
+}

@@ -1,0 +1,6 @@
+{
+	"appId": "com.apps.dev.tyran.driver",
+	"appName": "tyran-driver",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

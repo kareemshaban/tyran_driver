@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">tyran-driver</string>
+    <string name="title_activity_main">tyran-driver</string>
+    <string name="package_name">com.apps.dev.tyran.driver</string>
+    <string name="custom_url_scheme">com.apps.dev.tyran.driver</string>
+</resources>

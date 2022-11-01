@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title  class="title">
+      الملف الشخصي 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<img src="../../assets/images/delivery-man.png" class="logo">
+<ion-card class="card">
+   <ion-label class="name">{{driver.name}} <br>
+    طيار - driver
+    <br>
+    <a href="tel:{{driver.phone}}" style="text-decoration: none !important;">
+   <span style="font-size: 17px;"> {{driver.phone}}</span> 
+   </a>
+  </ion-label>
+</ion-card>
+</ion-content>

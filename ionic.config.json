@@ -1,0 +1,7 @@
+{
+  "name": "tyran-driver",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
